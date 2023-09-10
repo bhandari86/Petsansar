@@ -7,58 +7,67 @@
 {% endblock content %}
 
 {% block body %}
-<form method="post" action="{% url 'submit_list_adoption_request' animal_id=pet.id %}">
-    {% csrf_token %}
-    <div class="container p-2">
-        <h3 class="pb-4"><u>Adoption Form</u></h3>
-        <div class="m-1">
-            <label for="breeds">Breeds: </label>
-            <input type="text" name="breeds" id="breeds" value="{{pet.breeds}}" class="p-1 rounded w-25" readonly>
-        </div>
-        <div class="m-1">
-            <label for="breeds">Colour: </label>
-            <input type="text" name="colour" id="colour" value="{{pet.color}}" class="p-1 rounded w-25" readonly>
-        </div>
-        <div class="m-1">
-            <label for="breeds">Sex: </label>
-            <input type="text" name="sex" id="sex" value="{{pet.sex}}" class="p-1 rounded w-25" readonly>
-        </div>
-        <div class="m-1">
-            <label for="medical_condition">Medical Condition: </label>
-            <input type="text" name="medical_condition" id="medical_condition" value="{{pet.medical_condition}}"
-                class="p-1 rounded w-25" readonly>
-        </div>
-        <div class="m-1">
-            <label for="location">Location: </label>
-            <input type="text" name="location" id="location" value="{{pet.location}}" class="p-1 rounded w-25" readonly>
-        </div>
-        <div class="m-1">
-            <label for="desc">Description: </label>
-            <p type="text" name="desc" id="desc">{{pet.desc}}</p>
-        </div>
-        <div class="m-1">
-            <label for="desc">Your Username: </label>
-            <p type="text" name="desc" id="desc">{{user.username}}</p>
-        </div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-8">
+        <form method="post" action="{% url 'submit_list_adoption_request' animal_id=pet.id %}">
+            {% csrf_token %}
+            <div class="container p-2">
+                <h3 class="pb-4"><u>Adoption Form</u></h3>
+                <div class="m-1">
+                    <label for="breeds">Breeds: </label>
+                    <input type="text" name="breeds" id="breeds" value="{{pet.breeds}}" class=" form-control p-1 rounded w-25"
+                        readonly>
+                </div>
+                <div class="m-1">
+                    <label for="breeds">Colour: </label>
+                    <input type="text" name="colour" id="colour" value="{{pet.color}}" class=" form-control p-1 rounded w-25"
+                        readonly>
+                </div>
+                <div class="m-1">
+                    <label for="breeds">Sex: </label>
+                    <input type="text" name="sex" id="sex" value="{{pet.sex}}" class=" form-control p-1 rounded w-25" readonly>
+                </div>
+                <div class="m-1">
+                    <label for="medical_condition">Medical Condition: </label>
+                    <input type="text" name="medical_condition" id="medical_condition" value="{{pet.medical_condition}}"
+                        class=" form-control p-1 rounded w-25" readonly>
+                </div>
+                <div class="m-1">
+                    <label for="location">Location: </label>
+                    <input type="text" name="location" id="location" value="{{pet.location}}" class=" form-control p-1 rounded w-25"
+                        readonly>
+                </div>
+                <div class="m-1">
+                    <label for="desc">Description: </label>
+                    <p type="text" name="desc" id="desc">{{pet.desc}}</p>
+                </div>
+                <div class="m-1">
+                    <label for="desc">Your Username: </label>
+                    <p type="text" name="desc" id="desc">{{user.username}}</p>
+                </div>
 
-        <div class="m-1">
-            <label for="desc">Your Email: </label>
-            <p type="text" name="desc" id="desc">{{user.email}}</p>
-        </div>
-        <div class="m-1">
-            <label for="location">Enter your contact number: </label>
-            <input type="number" name="contact" id="contact" class="p-1 rounded w-25" required>
-        </div>
-        <div class="m-1">
-            <label for="location">Enter your address: </label>
-            <input type="text" name="address" id="address" class="p-1 rounded w-25" required>
-        </div>
-        <div class="m-1">
-            <label for="description">Write some description: </label>
-            <input name="description" id="description" class="p-1 rounded w-25" required>
-        </div>
-        <input type="submit" value="Adopt" class="btn btn-secondary mt-4">
+                <div class="m-1">
+                    <label for="desc">Your Email: </label>
+                    <p type="text" name="desc" id="desc">{{user.email}}</p>
+                </div>
+                <div class="m-1">
+                    <label for="location">Enter your contact number: </label>
+                    <input type="number" name="contact" id="contact" class=" form-control p-1 rounded w-25" required>
+                </div>
+                <div class="m-1">
+                    <label for="location">Enter your address: </label>
+                    <input type="text" name="address" id="address" class=" form-control p-1 rounded w-25" required>
+                </div>
+                <div class="m-1">
+                    <label for="description">Write some description: </label>
+                    <input name="description" id="description" class=" form-control p-1 rounded w-25" required>
+                </div>
+                <input type="submit" value="Adopt" class="btn btn-secondary mt-4">
+            </div>
+        </form>
     </div>
-</form>
+    <div class="col-md-1"></div>
+</div>
 
-{% endblock body %}
+    {% endblock body %}
