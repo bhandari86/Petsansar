@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Animal Rescue Map</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_API_KEY }}&libraries=places"></script>
+</head>
+
+<body>
+    <div id="map" style="height: 500px;"></div>
+    <script>
+        function initMap() {
+            var mapCenter = { lat: 40.7128, lng: -74.0060 }; // my default map center
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: mapCenter,
+                zoom: 8
+            });
+
+            var rescue_locations = '{{ rescue_locations }}';
+        for (var i = 0; i < rescue_locations.length; i++) {
+            var location = rescue_locations[i];
+            var marker = new google.maps.Marker({
+                position: { lat: location.latitude, lng: location.longitude },
+                map: map,
+                title: location.name
+            });
+        }
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_API_KEY }}&callback=initMap"></script>
+</body>
+
+</html>

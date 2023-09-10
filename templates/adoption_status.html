@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% block statistics %}
+
+<style>
+
+    img {
+        align-items: center;
+        padding-left: 0%;
+    }
+</style>
+
+<div class="container mt-5">
+    <h1 style="font-size: xx-large;" > Animal Adoption Statistics </h1>
+    <p style="font-size: 16pt;"> Adopted Animlas: {{ adopted_count }}</p>
+    <p style="font-size: 16pt;">Not Adopted Animlas: {{ not_adopted_count }}</p>
+    {% if chart_data %}
+    <img src="data:image/png;base64,{{chart_data}}" alt="pie chart">
+    {% else %}
+    <p style="font-size: 16pt;"> No Data availabe for the pie chart. </p>
+    {% endif %}
+</div>
+{% endblock statistics %}

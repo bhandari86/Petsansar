@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<!-- <div class="" style="background-image: url('/static/images/Banner_01.jpg');
+                            height: 100vh no-repeat">
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-12 col-lg-7">
+
+                <h1 class="mbr-section-subtitle mbr-fonts-style mt-lg-4 display-2 text-black text-light-emphasis  p-3">
+                    <strong>
+                    </strong>
+                    <div class="text-gray"><strong>Adopting is Better Than Buying </strong></div>
+                </h1>
+                <p class="mbr-text mbr-fonts-style display-7" style="font-size: 16pt;">
+                    Pet adoption is the process of transferring responsibility for a pet that was previously owned
+                    by another party. Common
+                    sources for adoptable pets are animal shelters, rescue groups, or other pet owners.
+                    There are not enough homes for all the animals that are born every year. Shelter animals are in
+                    need of a second chance.
+                    They might have been lost, given up or abandoned. You could be giving them a new life in a
+                    loving home.
+
+
+                </p>
+                <div class="mbr-section-btn custom-section-btn"> <button type="button" class="btn btn-primary"><a
+                            class="btn btn-primary text-white display-7" href="/donation">
+                            Donate
+                        </a></button></div>
+            </div>
+        </div>
+    </div>
+</div> -->
+{% endblock content %}
+
+{% block body %}
+<div class="section_title mt-4">
+    <h2 class="text-center m-2 md-3 mt-5">Welcome to my Pet Adoption Website </h2>
+    <h3 class="text-center text-underline"> Check Ours <span class="text-danger">Animals</span></h3>
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Illum soluta, distinctio inventore repudiandae ullam assumenda debitis numquam fuga dolorem vero
+                    fugiat blanditiis itaque exercitationem tenetur corporis accusantium suscipit atque vel.
+                </p>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+    {% for animal, range, nSlides in allAnimal%}
+    <div class="container">
+        <h3 class="my-3 text-center text-success bg-light">
+            {{animal.0.animaltype}} Adoption </h3>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for i in animal %}
+            <div class="col-md-3 mt-3">
+                <img src="/media/{{i.image}}" class="card-img-top" alt="" height="200" width="150">
+                <div class="card-body">
+                    <h5 class="card-title mt-2" id="namepet{{i.id}}"><span>Type:</span>{{i.animaltype}}</h5>
+                    <h5 class="card-text">Color:{{i.color}}</h5>
+                    <h6 class="card-title">
+                        <span id="dobpet{{i.id}}">DOB:{{i.DOB}}</span>
+                    </h6>
+                    <p class="card-text"> Description:{{i.desc|slice:"0:50"}}</p>
+
+                    <!-- <span id="divpr{{i.id}}" class="divpr">
+                       
+                      <button type="submit"  class="btn btn-danger "> Adopt</button></a>
+                    </span> -->
+
+                    <button type="btn btn-info"> <a href="/animaldetails/{{i.id}}">Animal Details</a></button>
+
+
+                    <a href="/media/{{i.image}}">
+                        <button class="btn btn-success btn-sm cart">View</button>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+
+    {% endblock body %}
+
+    {% block gallery %}
+    <!-- section Gallery -->
+    <h1 class="text-center" style="text-decoration: underline;"> Gallery</h1>
+    <div class="row mt-5">
+        <div class="col-lg-4 col-md-12 mb-3 mb-lg-0">
+            <img src="static/images/slide1.jpg" lass="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="Boat on Calm Water" />
+
+            <img src="static/images/12.jpg" class="w-100 shadow-1-strong rounded mb-4 img-fluid"
+                alt="Wintry Mountain Landscape" />
+        </div>
+
+        <div class="col-lg-4 mb-4 mb-lg-0">
+            <img src="static/images/r.jpg" class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="Mountains in the Clouds" />
+
+            <img src="static/images/image.jpg" class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="Boat on Calm Water" />
+        </div>
+
+        <div class="col-lg-4 mb-4 mb-lg-0">
+            <img src="static/images/slide2.jpg" class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="Waves at Sea" />
+
+            <img src="static/images/slide3.jpg" class="w-100 shadow-1-strong rounded mb-4 img-fluid"
+                alt="Yosemite National Park" />
+        </div>
+    </div>
+    <!-- end section Gallery -->
+
+
+
+    {% endblock gallery %}
+
+    {% block blog %}
+
+    <header>
+
+        <style>
+            #intro {
+
+                margin-top: 58px;
+            }
+
+            @media (max-width: 991px) {
+                #intro {
+
+                    margin-top: 45px;
+                }
+            }
+        </style>
+        <main class="my-10">
+            <div class="container p-lg-4">
+                <!--Section: Blog-->
+                <section class="text-center">
+                    <h4 class="mb-5" style="text-decoration: underlineb; font-size: 22pt;"><strong>Latest Posts for
+                            Animal </strong></h4>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <div class="card">
+                                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                    <img src="static/images/slide2.jpg" class="img-fluid" />
+                                    <a href="#!">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Cat care tips</h5>
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga non eaque hic
+                                        perspiciatis suscipit earum!
+                                    </p>
+                                    <a href="/blog" class="btn btn-primary">Read</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 mb-4">
+                            <div class="card">
+                                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                    <img src="static/images/slide1.jpg" class="img-fluid" />
+                                    <a href="#!">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Dog Care Tips</h5>
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, ducimus?
+                                    </p>
+                                    <a href="/blog" class="btn btn-primary">Read</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+                <!--Section: Blog-->
+
+
+            </div>
+        </main>
+
+
+        {% endblock blog %}

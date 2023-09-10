@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %} Rscue Stray Animal {% endblock %}
+
+{% block content %}
+
+{% endblock content %}
+
+{% block body %}
+
+<h1 class="text-center mt-4 m-4 text-success">Stray Animal Rescue Form</h1>
+
+<div class="container mt-5" style="font-size: 18pt;">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+
+                <div class="card-body">
+                    <form action="{% url 'rescue_form' %}" method="Post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="" class="form-label">Name</label>
+                            <input type="text" required name="name" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Phone</label>
+                            <input type="text" required name="Phone" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">location</label>
+                            <input type="text" required name="location" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">latitude</label>
+                            <input type="float" required name="latitude" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">longitude</label>
+                            <input type="float" required name="longitude" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Description</label>
+                            <input type="text" required name="description" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Image</label>
+                            <input type="file" required name="image" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary text-center">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal adoption map</title>
+</head>
+
+<body>
+    <div id="map" style="height:500px"></div>
+    <script>
+        function initmap() {
+            var mapCenter = { lat: 40.7128, lng: -74.0060 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: mapCenter,
+                zoom: 8
+            });
+        }
+        var animals = '{{ animals| safe }}';
+        for (var i = 0; i < animals.length; i++) {
+            var animal = animals[i];
+            var marker = new google.maps.Marker({
+                position: { lat: animal.latitude, lng: animal.longitude },
+                map: map,
+                title: animal.name
+            });
+        }
+    </script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_API_KEY }}&callback=initMap"></script>
+
+</body>
+
+</html>

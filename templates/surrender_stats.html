@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% block statistics %}
+
+<style>
+    img {
+        align-items: center;
+        padding-left: 0%;
+    }
+</style>
+
+<div class="container mt-5">
+    <h1 style="font-size: xx-large;" class="mt-4"> Animal Surrender Statistics </h1>
+    <p style="font-size: 16pt;"> Surrender Animlas: {{ surrender_count }}</p>
+    <p style="font-size: 16pt;"> Not Surrender Animlas: {{ not_surrender_count }}</p>
+    {% if chart_data %}
+    <img src="data:image/png;base64,{{chart_data}}" alt="pie chart">
+    {% else %}
+    <p style="font-size: 16pt;"> No Data availabe for the pie chart. </p>
+    {% endif %}
+</div>
+{% endblock statistics %}

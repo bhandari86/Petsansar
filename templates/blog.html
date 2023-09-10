@@ -1,0 +1,147 @@
+
+{% extends 'base.html' %}
+
+{% block title %} Blog Page {% endblock %}
+{% block gallery %}
+    <!-- Gallery -->
+   
+{% endblock gallery %}
+{% block content %}
+
+{% endblock content %}
+
+{% block body %}
+
+<header>
+    <!-- Intro settings -->
+    <style>
+        #intro {
+            /* Margin to fix overlapping fixed navbar */
+            margin-top: 58px;
+        }
+
+        @media (max-width: 991px) {
+            #intro {
+                /* Margin to fix overlapping fixed navbar */
+                margin-top: 45px;
+            }
+        }
+    </style>
+
+    <!-- Navbar -->
+
+
+    <!-- Jumbotron -->
+  
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main class="my-5">
+    <div class="container">
+        <!--Section: Content-->
+        <section class="text-center">
+            <h4 class="mb-5"><strong>Discover and Learn About Animal</strong></h4>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="card">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img src="static/images/slide1.jpg" class="img-fluid" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Hoskey</h5>
+                            <p class="card-text">
+                               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita soluta deleniti commodi! Laborum repellendus saepe dolore? Omnis necessitatibus incidunt illo, autem, amet quos, doloremque ratione eligendi est totam ipsam animi laudantium? Nemo impedit explicabo voluptatum illum deleniti? Inventore, neque ab! Natus sapiente ipsam optio, quos quam obcaecati saepe eius assumenda?
+                            </p>
+                            <a href="{% url 'dog' %}" class="btn btn-primary">Read</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img src="static/images/slide2.jpg" class="img-fluid" />
+                            <a href="{% url 'dog' %}">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cat</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, exercitationem. Nesciunt illo eaque itaque voluptatibus voluptas iure natus, esse minus saepe delectus quidem, ullam sequi cum neque possimus modi quo, et alias nulla! Minima laudantium placeat, corporis quod fugiat consectetur!
+                            </p>
+                            <a href="#!" class="btn btn-primary">Read</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img src="static/images/slide3.jpg" class="img-fluid" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Dog care Tips</h5>
+                            <p class="card-text">
+                               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae id, explicabo maiores alias dolore recusandae sequi laborum eius, deserunt adipisci, veniam quis eos nisi sed commodi in vel obcaecati? Nesciunt modi cupiditate dolores laboriosam omnis ex, et reprehenderit assumenda possimus ducimus, perferendis eius. Dicta, labore.
+                            </p>
+                            <a href="{% url 'dog' %}" class="btn btn-primary">Read</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="card">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img src="static/images/slide2.jpg" class="img-fluid" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cat Care Tips </h5>
+                            <p class="card-text">
+                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, porro. Tempora vero cum eligendi laboriosam eaque et earum praesentium magnam. Sunt, nulla distinctio, earum sequi, excepturi quo quisquam modi at harum commodi totam quis itaque.
+                            </p>
+                            <a href="#!" class="btn btn-primary">Read</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img src="static/images/slide1.jpg" class="img-fluid" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Dog Feeding Ideas</h5>
+                            <p class="card-text">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci aliquam, voluptatibus dolor fugit itaque beatae praesentium fuga veniam nostrum quam, omnis sed nisi aut ullam cumque, iste dolores. Dolores, earum!
+                            </p>
+                            <a href="#!" class="btn btn-primary">Read</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Section: Content-->
+
+        <!-- Pagination -->
+
+    </div>
+</main>
+
+{% endblock %}

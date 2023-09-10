@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+  
+
+<h2 class="text-center"> Search Results</h2>
+<div class="row justyfy-contect-center m-4">
+    
+    {% for animal in animals %}
+    <div class="col-md-4">
+        <div class="card m-3 p-2 " style="width: 18rem; height: 30rem; box-shadow: 4px 4px #c291fa;">
+            <img src="{{ animal.image.url }}" style="height: 250px ; width: 150px;" class="card-img-top" alt="">
+            <div class="card-body">
+                <h4 class="cart-title mt-1">{{ animal.breeds}}</h4>
+                <h3 class="card-subtitle mt-1">{{ animal.color}}</h3>
+                <h3 class="card-subtitle mt-1">{{ animal.desc}}</h3>
+                <h3 class="card-subtitle mt-1">{{ animal.DOB}}</h3>
+                <h3 class="card-subtitle mt-1">{{ animal.weight}}</h3>
+                <h3 class="card-subtitle mt-1">{{ animal.medical}}</h3>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+</div>

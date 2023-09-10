@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %} Surrender {% endblock %}
+
+{% block content %}
+
+{% endblock content %}
+
+{% block body %}
+<style>
+    #p{
+    text-align: center;
+    font-size: 16pt;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    }form{
+     font-size: 14pt;
+    }
+</style>
+<h1 class="text-center mt-4 m-4 text-success">Surrender Your Animal</h1>
+
+            <p id="p" class="mt-4" style="text-align: center;"> <strong> We’re Here to Help</strong>
+                Finding a new home for your pet is a difficult decision, and sometimes situations arise that might make it seem like
+                the
+                only choice. A shelter environment may not be suitable or comfortable for your pet and can cause unnecessary stress.
+                We
+                strongly encourage pet owners to find a new home through private methods or try to resolve any issues in the current
+                home, if possible – and we can help!
+            </p>
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7" style="font-size: 16pt;" >
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+
+                <div class="card-body">
+                    <form action="{% url 'surrender' %}" method="Post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="" class="form-label">Animaltype</label>
+                            <input type="text" required id="animaltype" name="animaltype" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Breeds</label>
+                            <input type="text" required name="breeds" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Color</label>
+                            <input type="text" required name="color" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Description</label>
+                            <input type="text" required name="desc" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Date of Birth</label>
+                            <input type="date" required name="dob" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Sex</label>
+                            <input type="text" required name="sex" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">weight (kg)</label>
+                            <input type="number" required name="weight" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">medical Condition</label>
+                            <input type="text" required name="medical" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label img-fluid">medical Certificate</label>
+                            <input type="file" required name="mcertificate" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">location</label>
+                            <input type="text" required name="location" class="form-control">
+                        </div>
+                        <div class="mb-3 img-fluid">
+                            <label for="" class="form-label">Image</label>
+                            <input type="file" required name="image" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary text-center">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

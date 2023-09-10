@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}List of surrender animal {% endblock %}
+
+{% block body %}
+
+<div class="section_title">
+    <h2 class="text-center m-2 md-3">Welcome to my Pet Adoption Website </h2>
+    <h3 class="text-center"> Check Ours <span class="text-danger">Animals</span></h3>
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Illum soluta, distinctio inventore repudiandae ullam assumenda debitis numquam fuga dolorem vero
+                    fugiat blanditiis itaque exercitationem tenetur corporis accusantium suscipit atque vel.
+                </p>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for pet in pets %}
+
+            <div class="col-md-3 mt-3">
+                {% if pet.image %}
+                <img src="{{pet.image.url}}" alt="" weidth="100" height="150">
+                <img src="{{pet.medical_certificate.url}}" alt=""  weidth="50" height="50" class="p-2" >
+
+                {% else %}
+                <!-- <img src="/media/{{pet.image}}" alt=""> -->
+                {% endif %}
+
+
+                <div class="card-body" style="font-weight: bold; text-transform: capitalize;">
+                    <p> animaltype:{{ pet.animaltype }}</p>
+                    <p>Breeds:{{pet.breeds}}| Color:{{pet.color}}</p>
+                    <p></p>
+                    <p>Description:{{pet.desc}}</p>
+                    <p>Date of Birth:{{pet.DOB}}| Sex:{{pet.sex}}</p>
+                    <p></p>
+                    <p>Weight:{{pet.weight }} kg |</p>
+                    <p>Medical_Condition:{{pet.medical}}</p>
+                    <p></p>
+                    <p>Location:{{pet.location}}</p>
+
+
+                    <button><a href="{% url 'list_request' pet.pk %}">Adopt</a></button>
+
+
+                    <a href="/media/{{pet.medical_certificate}}">
+                        <button class="btn btn-success btn-sm cart">View</button>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock body %}

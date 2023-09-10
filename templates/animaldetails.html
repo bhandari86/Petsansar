@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 mt-3">
+                <img src="/media/{{animal.image}}" class="card-img-top" alt="" height="200" width="150">
+                <div class="card-body">
+                    <h1>{{ animal.breeds }}</h1><br><br>
+                    <h5 class="card-title mt-2" id="namepet{{animal.id}}"><span>Type:</span>{{animal.animaltype}}</h5>
+                    <h5 class="card-text">Color:{{animal.color}}</h5>
+                    <h6 class="card-title">
+                        <span id="dobpet{{i.id}}">DOB:{{animal.DOB}}</span>
+                    </h6>
+                    <p class="card-text" style="font-weight: bold;"> Description: {{animal.desc}}</p>
+                    <h5 class="card-text">Weight:{{animal.weight}} kg</h5>
+                    <h5 class="card-text">Medical_condition:{{animal.medical_condition}}</h5>
+                    <h5 class="card-text">Location:{{animal.location}}</h5>
+                      
+                    <!-- <span id="divpr{{i.id}}" class="divpr">     
+                          <button type="submit"  class="btn btn-danger "> Adopt</button></a>
+                        </span> -->
+                        <button type="btn btn-info"> <a href="{% url 'adoption_request' animal.id %}">Adopt</a></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock body %}
